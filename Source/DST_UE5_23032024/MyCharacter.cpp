@@ -4,7 +4,7 @@
 #include "MyCharacter.h"
 #include "DST_Component.h"
 #include "EnhancedInputComponent.h"
-
+#include "EnhancedInputSubsystems.h"
 // Sets default values
 AMyCharacter::AMyCharacter()
 {
@@ -17,7 +17,7 @@ AMyCharacter::AMyCharacter()
 void AMyCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
 }
 
 // Called every frame
@@ -30,7 +30,6 @@ void AMyCharacter::Tick(float DeltaTime)
 void AMyCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
-	
 	if (UEnhancedInputComponent* EnhancedInputComponent = Cast<UEnhancedInputComponent>(PlayerInputComponent))
 	{
 		EnhancedInputComponent->BindAction(m_DSTAction, ETriggerEvent::Triggered, this, &AMyCharacter::DSTFunction);

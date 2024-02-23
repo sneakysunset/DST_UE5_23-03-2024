@@ -4,8 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "EnhancedInputSubsystems.h"
 #include "MyCharacter.generated.h"
-
 class UInputMappingContext;
 class UInputAction;
 class UDST_Component;
